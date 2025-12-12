@@ -1,0 +1,123 @@
+{#
+ * AXIOMS CLOUD
+ *
+ * SPDX-License-Identifier: Apache-2.0 
+ * © 2025 by Enrique Regis Pascalin Romo <enrique.pascalin@proton.me>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ * 
+ * templates/web/spec.html.twig 
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ spec.title }} — Specification{% endblock %}
+
+{% block content %}
+<article class="py-4">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="small mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('spec_catalogue') }}">Specifications</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ spec.title }}</li>
+      </ol>
+    </nav>
+
+    <header class="mb-3">
+      <h1 class="h2 mb-1">{{ spec.title }}</h1>
+      <div class="text-muted small">
+        Version {{ spec.version }} • {{ spec.status }} • Updated {{ spec.updatedAt|date('Y-m-d') }}
+      </div>
+    </header>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <section class="mb-4">
+          <h2 class="h5">Overview</h2>
+          <p>{{ spec.abstract|raw }}</p>
+        </section>
+
+        <section class="mb-4">
+          <h2 class="h5">Contracts</h2>
+          <ul class="list-unstyled">
+            {% if spec.rpcContractUrl %}
+              <li>RPC (gRPC/OpenAPI): <a href="{{ spec.rpcContractUrl }}">View contract</a></li>
+            {% endif %}
+            {% if spec.asyncApiUrl %}
+              <li>Events (AsyncAPI): <a href="{{ spec.asyncApiUrl }}">View AsyncAPI</a></li>
+            {% endif %}
+            {% if spec.policyDocsUrl %}
+              <li>Policies (e.g., OPA/Rego): <a href="{{ spec.policyDocsUrl }}">Policy docs</a></li>
+            {% endif %}
+            {% if spec.observability %}
+              <li>Observability: {{ spec.observability|e }}</li>
+            {% endif %}
+          </ul>
+        </section>
+
+        <section class="mb-4">
+          <h2 class="h5">Axioms mapping</h2>
+          <table class="table table-sm align-middle">
+            <thead><tr><th>Axiom</th><th>Level</th><th>Evidence</th></tr></thead>
+            <tbody>
+              {% for ax in spec.axioms %}
+                <tr>
+                  <td>{{ ax.code }}</td>
+                  <td>{{ ax.level }}</td>
+                  <td>{{ ax.evidenceNote|default('—') }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+
+        <section class="mb-4">
+          <h2 class="h5">Downloads</h2>
+          <ul>
+            {% for file in spec.downloads %}
+              <li><a href="{{ file.url }}">{{ file.label }}</a> ({{ file.size|default('?') }})</li>
+            {% endfor %}
+          </ul>
+        </section>
+      </div>
+
+      <aside class="col-lg-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h3 class="h6">Conformance</h3>
+            <dl class="row mb-0 small">
+              <dt class="col-6">Profile</dt><dd class="col-6 text-end">{{ spec.conformance.profile|default('—') }}</dd>
+              <dt class="col-6">CTK status</dt><dd class="col-6 text-end">{{ spec.conformance.status|default('Not run') }}</dd>
+              <dt class="col-6">Passed</dt><dd class="col-6 text-end">{{ spec.conformance.passed|default(0) }}/{{ spec.conformance.total|default(0) }}</dd>
+            </dl>
+            {% if spec.conformance.reportUrl %}
+              <a href="{{ spec.conformance.reportUrl }}" class="btn btn-outline-primary btn-sm w-100 mt-2">View Bill of Health</a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="h6">Metadata</h3>
+            <div class="small">
+              <div><strong>Domain:</strong> {{ spec.domain }}</div>
+              <div><strong>Tags:</strong> {{ spec.tags|join(', ') }}</div>
+              <div><strong>Maintainers:</strong> {{ spec.maintainers|join(', ') }}</div>
+              <div><strong>License:</strong> {{ spec.license }}</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</article>
+{% endblock %}

@@ -1,17 +1,104 @@
+{#
+ * AXIOMS CLOUD
+ *
+ * SPDX-License-Identifier: Apache-2.0 
+ * © 2025 by Enrique Regis Pascalin Romo <enrique.pascalin@proton.me>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License. 
+ *
+ * templates/base.html.twig 
+#}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="{{ app.request.locale | default('en') }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}AXIOMS — Technical Specifications{% endblock %}</title>
+  {% block meta %}
+  <meta name="description" content="{% block meta_description %}Open technical architectural specifications and conformance{% endblock %}">
+  <meta name="keywords" content=" AXIOMS, architecture, software architecture, technical specifications, conformance, super-contracts, evidence-based architecture, causal models, cell-based emergence">
+  {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+  {# Favicons #}
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/apple-icon-57x57.png') }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('images/apple-icon-60x60.png') }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-icon-72x72.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/apple-icon-76x76.png') }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-icon-114x114.png') }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/apple-icon-120x120.png') }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('images/apple-icon-144x144.png') }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/apple-icon-152x152.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/apple-icon-180x180.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('images/android-icon-192x192.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('images/favicon-96x96.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ asset('images/manifest.json') }}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{{ asset('images/ms-icon-144x144.png') }}">
+  <meta name="theme-color" content="#ffffff">
+
+  {# Fonts #}
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+  {# Vendor CSS Files #}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ asset('vendor/jquery/jquery-ui.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/jquery/jquery-ui.theme.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/aos/aos.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}">
+
+  {# Main CSS File #}
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+  {% block styles %}{% endblock %}
+</head>
+<body class="index-page" {% block body_attributes %}{% endblock %}>
+  {% include 'partials/header.html.twig' %}
+
+  <main id="main" class="main {% block main_class %}{% endblock %}">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials/footer.html.twig' %}
+
+  {# Scroll Top Button #}
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  {# Preloader #}
+  <div id="preloader"></div>
+
+
+  {# Vendor JS Files #}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ asset('/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+
+  {# Main JS File #}
+  <script src="{{ asset('js/main.js') }}"></script>
+  {% block scripts %}
+    {% block importmap %}{{ importmap('app') }}{% endblock %}
+  {% endblock %}
+</body>
 </html>

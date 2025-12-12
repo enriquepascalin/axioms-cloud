@@ -1,0 +1,22 @@
+{# Learn how to use Turbo Streams: https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update #}
+{% block create %}
+    <turbo-stream action="append" target="contract_artifact_formats">
+        <template>
+            <div id="{{ 'contract_artifact_format_' ~ id }}">
+                #{{ id }} created
+            </div>
+        </template>
+    </turbo-stream>
+{% endblock %}
+
+{% block update %}
+    <turbo-stream action="update" target="contract_artifact_format_{{ id }}">
+        <template>
+            #{{ id }} updated
+        </template>
+    </turbo-stream>
+{% endblock %}
+
+{% block remove %}
+    <turbo-stream action="remove" target="contract_artifact_format_{{ id }}"></turbo-stream>
+{% endblock %}

@@ -1,3 +1,12 @@
+/* assets/styles/app.css */
+@import './axioms.css';
+
+html, body {
+  height: 100%;
+}
+
 body {
-    background-color: skyblue;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--ax-blue);
+  background: #fff;
 }

@@ -1,0 +1,108 @@
+/* assets/styles/axioms.css */
+:root{
+  --ax-blue:  #0c5c70;
+  --ax-orange:#e18134;
+  --ax-text:  #0c5c70;
+  --ax-white: #ffffff;
+  --ax-black: #0b1220;
+}
+
+/* === Header that starts transparent and becomes solid on scroll === */
+.ax-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1030; /* above hero */
+  background: transparent;
+  transition: background-color .25s ease, box-shadow .25s ease;
+  backdrop-filter: none;
+}
+
+.ax-header .navbar .nav-link {
+  color: var(--ax-white);
+  font-weight: 600;
+}
+
+.ax-header .navbar .nav-link:hover,
+.ax-header .navbar .nav-link:focus {
+  color: var(--ax-orange);
+}
+
+.ax-header.is-scrolled {
+  background: var(--ax-white);
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.ax-header.is-scrolled .navbar .nav-link {
+  color: var(--ax-blue);
+}
+
+/* === Full-screen hero === */
+.ax-hero {
+  position: relative;
+  min-height: 100vh; /* full viewport */
+  display: grid;
+  align-items: end;
+  /* image in ::before so we can keep hero content crisp */
+  overflow: clip;
+}
+
+@media (max-width: 991.98px){
+  .ax-hero { min-height: calc(100svh - 0px); }
+}
+
+/* content sits above the overlays */
+.ax-hero__content {
+  position: relative;
+  z-index: 1;
+  color: var(--ax-white);
+  padding-top: calc(72px + 4rem);  /* space under fixed header */
+  padding-bottom: 6rem;
+}
+
+.ax-hero__eyebrow {
+  color: rgba(255,255,255,.75);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 600;
+  font-size: .85rem;
+}
+
+.ax-hero__title {
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.ax-cta {
+  background: var(--ax-orange);
+  color: #fff;
+  border: none;
+  padding: .9rem 1.2rem;
+  border-radius: .75rem;
+  font-weight: 700;
+}
+.ax-cta:hover { filter: brightness(.95); }
+
+/* === Section rhythm (like Nova) === */
+.section {
+  padding: 5rem 0;
+}
+.section--alt {
+  background: #f7f9fb;
+}
+
+/* === Smooth anchor offset (so content isn't hidden under fixed header) === */
+:target {
+  scroll-margin-top: 86px; /* header height + margin */
+}
+
+/* === Minimal scroll-reveal (if you don't load WOW.js) === */
+[data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+[data-reveal].revealed { opacity: 1; transform: none; }
+
+/* === Utility === */
+.text-ax-blue { color: var(--ax-blue); }
+.text-ax-orange { color: var(--ax-orange); }
+.bg-ax-blue { background: var(--ax-blue); color: #fff; }
+.bg-ax-white { background: #fff; }
+.border-ax-blue { border-color: var(--ax-blue) !important; }
