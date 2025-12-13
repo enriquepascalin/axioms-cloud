@@ -45,7 +45,7 @@
 
     <div class="row gy-4">
         <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/img/axioms-team-architecture.jpg" class="img-fluid" alt="AXIOMS Team - From Chaos to Evidence">
+        <img src="{{ asset('img/axioms-team-architecture.jpg') }}" class="img-fluid" alt="AXIOMS Team - From Chaos to Evidence">
         <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
         </div>
         <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
@@ -140,7 +140,7 @@
         </div>
         <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
         <div class="axioms-diagram text-center">
-            <img src="assets/img/axioms-dual-paradigm.png" class="img-fluid" alt="AXIOMS Dual Paradigm">
+            <img src="{{ asset('img/axioms-dual-paradigm.png') }}" class="img-fluid" alt="AXIOMS Dual Paradigm">
             <p class="small mt-2">The AXIOMS Feedback Loop: Contracts define intent, Evidence proves compliance</p>
         </div>
         </div>
@@ -225,7 +225,7 @@
                 <strong>Knowledge Dimension</strong> — a machine-readable repository of intent, evidence, and truth 
                 that actively governs how all realms inside the Cell operate.
                 </p>
-                <a href="{{ path('app_web_dw_axioms_spec') }}#cell" class="btn btn-outline-primary">Read Cell Specification</a>
+                <a href="{{ path('app_web_dw_axioms_spec') }}" class="btn btn-outline-primary">Read Cell Specification</a>
             </div>
             </div>
         </div>
@@ -294,7 +294,7 @@
     <div class="row gy-4 align-items-center">
         <div class="col-lg-4" data-aos="fade-right">
         <div class="gssato-visual text-center">
-            <img src="assets/img/gssato-dimensions.png" class="img-fluid rounded shadow" alt="GSSATO 5 Dimensions">
+            <img src="{{ asset('img/gssato-dimensions.png') }}" class="img-fluid rounded shadow" alt="GSSATO 5 Dimensions">
         </div>
         </div>
         
@@ -347,7 +347,7 @@
                 provides the mechanism to make them objective, automated, and undeniable.
             </p>
             
-            <a href="{{ path('app_web_dw_gssato_spec') }}#gssato" class="btn btn-primary mt-2">Explore GSSATO Standard</a>
+            <a href="{{ path('app_web_dw_gssato_spec') }}" class="btn btn-primary mt-2">Explore GSSATO Standard</a>
         </div>
         </div>
     </div>
@@ -448,7 +448,7 @@
         </p>
         <div class="cta-buttons">
             <a href="{{ path('app_web_dw_axioms_spec') }}" class="btn btn-primary btn-lg me-3">Read the Full Specification</a>
-            <a href="{{ path('app_web_cell_tpl') }}" class="btn btn-outline-primary btn-lg">Get Starter Templates</a>
+            <a href="{{ path('app_web_downloads') }}" class="btn btn-outline-primary btn-lg">Get Starter Templates</a>
         </div>
         </div>
     </div>
