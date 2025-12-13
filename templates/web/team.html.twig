@@ -16,141 +16,445 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. 
  * 
- * templates/web/team.html.twig 
+ * templates/web/about.html.twig 
 #}
 {% extends 'base.html.twig' %}
 
-{% block title %}AXIOMS — Open Technical Specifications{% endblock %}
+{% block title %}About AXIOMS — The Evidence & Contract Driven Architecture{% endblock %}
 
 {% block content %}
 
 <!-- Page Title -->
 <div class="page-title dark-background">
     <div class="container position-relative">
-    <h1>Team</h1>
-    <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+    <h1>About AXIOMS</h1>
+    <p>Architecture as Evidence — Ending the Wilderness of Architectural Dogma</p>
     <nav class="breadcrumbs">
         <ol>
-        <li><a href="index.html">Home</a></li>
-        <li class="current">Team</li>
+        <li><a href="{{ path('app_axioms_default') }}">Home</a></li>
+        <li class="current">About</li>
         </ol>
     </nav>
     </div>
 </div><!-- End Page Title -->
 
-<!-- Team Section -->
-<section id="team" class="team section">
+<!-- About Team Section -->
+<section id="team" class="about section">
 
     <div class="container">
 
-    <div class="row gy-5">
+    <div class="row gy-4">
+        <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/img/axioms-team-architecture.jpg" class="img-fluid" alt="AXIOMS Team - From Chaos to Evidence">
+        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+        </div>
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+        <h3>The AXIOMS Community: Architects Tired of Dogma</h3>
+        <p class="fst-italic">
+            We are software architects, engineers, and thought leaders who grew weary of the "circus of confusing concepts" 
+            in software architecture. After years of debating Layers, Hexagons, Clean Architecture, and DDD with no verifiable 
+            outcomes, we decided to build a better way.
+        </p>
+        <ul>
+            <li><i class="bi bi-check2-all"></i> <span><strong>Enrique Pascalin Romo</strong> — Principal Architect & Specification Author with 15+ years building enterprise systems that actually work in production</span></li>
+            <li><i class="bi bi-check2-all"></i> <span><strong>Community Contributors</strong> — Developers, architects, and tech leads from companies who've suffered through architectural decay</span></li>
+            <li><i class="bi bi-check2-all"></i> <span><strong>Our Mission</strong>: Replace architectural fashion shows with verifiable proof, dogma with evidence, and opinions with objective measurements</span></li>
+        </ul>
+        <p>
+            We created AXIOMS because we felt the rising frustration of seeing beautiful architectural diagrams become lies 
+            six months into production. The pristine layers blur, quick-fix dependencies appear, and slowly the system drifts 
+            into a "ball of mud." Traditional architectures offer philosophy but no enforcement. AXIOMS changes that.
+        </p>
+        </div>
+    </div>
 
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-        <div class="member-img">
-            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-            <div class="social">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+</section><!-- /About Team Section -->
+
+<!-- What is AXIOMS Section -->
+<section id="axioms-definition" class="axioms-definition section light-background">
+
+    <div class="container" data-aos="fade-up">
+
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="section-title text-center mb-5">
+            <h2>What is AXIOMS?</h2>
+            <p>The Evidence & Contract Driven Architecture</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="row gy-4 align-items-center">
+        <div class="col-lg-8">
+        <div class="content">
+            <h3>From Architectural Wilderness to Civilization</h3>
+            <p>
+                AXIOMS is not "another architectural style." It's an <strong>engineering framework</strong> that replaces 
+                architectural dogma with verifiable proof. It answers the despair of endless debates about "Ports vs Interfaces" 
+                or "DDD vs Clean Architecture" by providing objective, measurable architectural integrity.
+            </p>
+            
+            <div class="axioms-pillars mt-4">
+                <h4>The Two Foundational Pillars:</h4>
+                <div class="row mt-3">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card pillar-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contract-Driven Design</h5>
+                        <p class="card-text">Beyond simple API signatures. Every component is defined by comprehensive COSTTE contracts:</p>
+                        <ul class="mini-list">
+                        <li><strong>C</strong>ontext — Why the system exists</li>
+                        <li><strong>O</strong>ntology — What things exist and relate</li>
+                        <li><strong>S</strong>emantics — What data actually means</li>
+                        <li><strong>T</strong>axonomy — How things are categorized</li>
+                        <li><strong>T</strong>opology — How things are connected</li>
+                        <li><strong>E</strong>pistemology — How we validate truth</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card pillar-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Evidence-Driven Architecture</h5>
+                        <p class="card-text">Architecture you can prove with automated, executable evidence via ARCH fitness functions:</p>
+                        <ul class="mini-list">
+                        <li><strong>A</strong>utomated — Runs without human intervention</li>
+                        <li><strong>R</strong>elentless — Checks always, not once</li>
+                        <li><strong>C</strong>ontextual — Knows its purpose and scope</li>
+                        <li><strong>H</strong>olistic — Sees the system, not just units</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <p class="mt-4">
+                This dual paradigm ensures every architectural decision exists twice: once as a machine-readable contract, 
+                and once as evidence that the running system obeys it.
+            </p>
+        </div>
+        </div>
+        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="axioms-diagram text-center">
+            <img src="assets/img/axioms-dual-paradigm.png" class="img-fluid" alt="AXIOMS Dual Paradigm">
+            <p class="small mt-2">The AXIOMS Feedback Loop: Contracts define intent, Evidence proves compliance</p>
+        </div>
+        </div>
+    </div>
+
+    </div>
+
+</section><!-- /What is AXIOMS Section -->
+
+<!-- The Cell Section -->
+<section id="cell" class="cell section">
+
+    <div class="container" data-aos="fade-up">
+
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="section-title text-center mb-5">
+            <h2>The Cell: Your Architectural Stem Cell</h2>
+            <p>A polymorphic unit that adapts to any topological need</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="row gy-4">
+        <div class="col-lg-5" data-aos="fade-right">
+        <div class="cell-visualization">
+            <h4>Canonical Cell Structure</h4>
+            <pre class="bg-dark text-light p-3 rounded"><code>CellName/
+├── Knowledge/          # D1 – Contracts, specs, evidence
+├── DNA/               # D3/D4 – Semantic core, entities, invariants
+├── Behavior/          # D3/D4 – Use cases, workflows, orchestration
+├── Integration/       # D3/D4 – Semantic edges and IO
+├── Infrastructure/    # D3/D4 – Platform/runtime glue
+└── Tests/             # D5 – Evidence generators</code></pre>
+            <p class="mt-3">Every Cell is self-contained, independently deployable, and governed by formal contracts.</p>
+        </div>
+        </div>
+        
+        <div class="col-lg-7" data-aos="fade-left">
+        <div class="cell-properties">
+            <h4>Polymorphic STA Adaptation</h4>
+            <p>
+                Think of an AXIOMS Cell like a <strong>biological stem cell</strong>. Your Cell adapts and transforms 
+                into any "tissue" you need within your software organism:
+            </p>
+            
+            <div class="row mt-4">
+            <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="sta-type p-3">
+                <div class="icon mb-3">
+                    <i class="bi bi-box-seam" style="font-size: 2rem;"></i>
+                </div>
+                <h5>Modular Monolith</h5>
+                <p class="small">Cell acts as a module within a single deployable unit</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="200">
+                <div class="sta-type p-3">
+                <div class="icon mb-3">
+                    <i class="bi bi-boxes" style="font-size: 2rem;"></i>
+                </div>
+                <h5>Microservice</h5>
+                <p class="small">Cell deploys independently as a microservice</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="300">
+                <div class="sta-type p-3">
+                <div class="icon mb-3">
+                    <i class="bi bi-lightning" style="font-size: 2rem;"></i>
+                </div>
+                <h5>Serverless</h5>
+                <p class="small">Cell runs as serverless function with same structure</p>
+                </div>
+            </div>
+            </div>
+            
+            <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">The Core Innovation</h5>
+                <p class="card-text">
+                Unlike traditional microservices or modules, every AXIOMS Cell carries its own 
+                <strong>Knowledge Dimension</strong> — a machine-readable repository of intent, evidence, and truth 
+                that actively governs how all realms inside the Cell operate.
+                </p>
+                <a href="{{ path('app_specification') }}#cell" class="btn btn-outline-primary">Read Cell Specification</a>
+            </div>
             </div>
         </div>
-        <div class="member-info text-center">
-            <h4>Walter White</h4>
-            <span>Chief Executive Officer</span>
-            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
         </div>
-        </div><!-- End Team Member -->
+    </div>
 
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-        <div class="member-img">
-            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="social">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="member-info text-center">
-            <h4>Sarah Jhonson</h4>
-            <span>Product Manager</span>
-            <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
-        </div>
-        </div><!-- End Team Member -->
+    </div>
 
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-        <div class="member-img">
-            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-            <div class="social">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="member-info text-center">
-            <h4>William Anderson</h4>
-            <span>CTO</span>
-            <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
-        </div>
-        </div><!-- End Team Member -->
+</section><!-- /The Cell Section -->
 
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-        <div class="member-img">
-            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-            <div class="social">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="member-info text-center">
-            <h4>Amanda Jepson</h4>
-            <span>Accountant</span>
-            <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
-        </div>
-        </div><!-- End Team Member -->
+<!-- Stats Section -->
+<section id="stats" class="stats section light-background">
 
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-        <div class="member-img">
-            <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="">
-            <div class="social">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="member-info text-center">
-            <h4>Brian Doe</h4>
-            <span>Marketing</span>
-            <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit laborum velit</p>
-        </div>
-        </div><!-- End Team Member -->
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-        <div class="member-img">
-            <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="">
-            <div class="social">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
+    <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">5</span>
+            <p>Architectural Dimensions</p>
         </div>
-        <div class="member-info text-center">
-            <h4>Josepha Palas</h4>
-            <span>Operation</span>
-            <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="31" data-purecounter-duration="1" class="purecounter">31</span>
+            <p>Normative Axioms</p>
         </div>
-        </div><!-- End Team Member -->
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter">6</span>
+            <p>Cell Realms</p>
+        </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+        <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter">4</span>
+            <p>Contract Types</p>
+        </div>
+        </div><!-- End Stats Item -->
 
     </div>
 
     </div>
 
-</section><!-- /Team Section -->
+</section><!-- /Stats Section -->
+
+<!-- GSSATO Section -->
+<section id="gssato" class="gssato section">
+
+    <div class="container" data-aos="fade-up">
+
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="section-title text-center mb-5">
+            <h2>GSSATO: The Periodic Table of Software Architecture</h2>
+            <p>Global Standard for Software Architecture Taxonomy and Ontology</p>
+        </div>
+        </div>
+    </div>
+
+    <div class="row gy-4 align-items-center">
+        <div class="col-lg-4" data-aos="fade-right">
+        <div class="gssato-visual text-center">
+            <img src="assets/img/gssato-dimensions.png" class="img-fluid rounded shadow" alt="GSSATO 5 Dimensions">
+        </div>
+        </div>
+        
+        <div class="col-lg-8" data-aos="fade-left">
+        <div class="content">
+            <h3>Ending the Conflation of Architectural Concerns</h3>
+            <p>
+                GSSATO provides a rigorous, orthogonal framework that allows architects to describe, compare, 
+                and evaluate software architectures using a common coordinate system. It decomposes architectural 
+                decision-making into five independent dimensions:
+            </p>
+            
+            <div class="dimensions-grid mt-4">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                <div class="dimension-item p-3">
+                    <h5><span class="badge bg-primary me-2">D1</span> Knowledge Dimension</h5>
+                    <p class="small mb-0">How we understand and define what must be built</p>
+                </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                <div class="dimension-item p-3">
+                    <h5><span class="badge bg-success me-2">D2</span> Structural Dimension</h5>
+                    <p class="small mb-0">How the system is decomposed and structured in space</p>
+                </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                <div class="dimension-item p-3">
+                    <h5><span class="badge bg-warning me-2">D3</span> Epistemological Dimension</h5>
+                    <p class="small mb-0">How we conceptualize, model, and reason about the solution</p>
+                </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                <div class="dimension-item p-3">
+                    <h5><span class="badge bg-info me-2">D4</span> Process Dimension</h5>
+                    <p class="small mb-0">How people, practices, and pipelines build and evolve the system</p>
+                </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                <div class="dimension-item p-3">
+                    <h5><span class="badge bg-danger me-2">D5</span> Quality Dimension</h5>
+                    <p class="small mb-0">How we define, measure, and protect "how well" the system works</p>
+                </div>
+                </div>
+            </div>
+            </div>
+            
+            <p class="mt-3">
+                <strong>AXIOMS is the execution engine for GSSATO</strong>. It takes the taxonomy's dimensions and 
+                provides the mechanism to make them objective, automated, and undeniable.
+            </p>
+            
+            <a href="{{ path('app_specification') }}#gssato" class="btn btn-primary mt-2">Explore GSSATO Standard</a>
+        </div>
+        </div>
+    </div>
+
+    </div>
+
+</section><!-- /GSSATO Section -->
+
+<!-- Why AXIOMS Section -->
+<section id="why-axioms" class="why-axioms section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+    <h2>Why the World Needs AXIOMS</h2>
+    <p>The symptoms of architectural chaos we're solving</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row">
+    
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100">
+            <div class="card-body">
+            <div class="icon mb-3 text-primary">
+                <i class="bi bi-chat-left-quote" style="font-size: 2rem;"></i>
+            </div>
+            <h4 class="card-title">End Vocabulary Wars</h4>
+            <p class="card-text">
+                No more debates about "Is a Port in Hexagonal the same as a Use Case Interactor in Clean Architecture?" 
+                AXIOMS provides a unified lexicon that pins each concept to a specific dimension and directory.
+            </p>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100">
+            <div class="card-body">
+            <div class="icon mb-3 text-success">
+                <i class="bi bi-hammer" style="font-size: 2rem;"></i>
+            </div>
+            <h4 class="card-title">Stop Golden Hammer Syndrome</h4>
+            <p class="card-text">
+                No more applying full DDD ceremony to a simple reporting tool. AXIOMS Cells adapt to the complexity needed, 
+                preventing catastrophic over-engineering with inappropriate architectural complexity.
+            </p>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100">
+            <div class="card-body">
+            <div class="icon mb-3 text-warning">
+                <i class="bi bi-file-break" style="font-size: 2rem;"></i>
+            </div>
+            <h4 class="card-title">Eliminate Documentation Drift</h4>
+            <p class="card-text">
+                Architecture documents become lies as systems evolve. AXIOMS keeps specifications versioned with code, 
+                with the CTK failing builds if human-readable specs contradict machine-readable contracts.
+            </p>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="card h-100">
+            <div class="card-body">
+            <div class="icon mb-3 text-danger">
+                <i class="bi bi-shield-check" style="font-size: 2rem;"></i>
+            </div>
+            <h4 class="card-title">Architecture You Can Prove</h4>
+            <p class="card-text">
+                Architectural compliance is no longer a matter of opinion. It's a measurable, non-negotiable property 
+                of the system, verified with every commit through automated fitness functions.
+            </p>
+            </div>
+        </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+</section><!-- /Why AXIOMS Section -->
+
+<!-- Call to Action -->
+<section id="cta" class="cta section">
+
+    <div class="container" data-aos="fade-up">
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+        <h2>Ready to Leave the Architectural Wilderness?</h2>
+        <p class="mb-4">
+            Join the movement from dogma to evidence. Start building systems with objective, verifiable architectural integrity.
+        </p>
+        <div class="cta-buttons">
+            <a href="{{ path('app_specification') }}" class="btn btn-primary btn-lg me-3">Read the Full Specification</a>
+            <a href="{{ path('app_download') }}" class="btn btn-outline-primary btn-lg">Get Starter Templates</a>
+        </div>
+        </div>
+    </div>
+    
+    </div>
+
+</section><!-- /Call to Action -->
 
 {% endblock %}
