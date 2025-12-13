@@ -1166,6 +1166,38 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Axioms Table
+--------------------------------------------------------------*/
+.table-axioms {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+.table-axioms th,
+.table-axioms td {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+.table-axioms thead th {
+  background-color: var(--accent-color);
+  color: var(--heading-color);
+  font-weight: bold;
+  text-align: center;
+}
+.table-axioms tbody td {
+  text-align: justify;
+}
+.table-axioms tbody td:first-child {
+  font-weight: bold;
+  text-align: left;
+}
+.table-axioms tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
 .about .content h3 {
