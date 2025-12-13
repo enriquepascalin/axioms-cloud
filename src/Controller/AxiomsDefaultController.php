@@ -406,4 +406,18 @@ final class AxiomsDefaultController extends AbstractController
             'projects' => $projects->findBy([], ['name' => 'ASC']),
         ]);
     }
+
+    #[Route('/newsletter/subscribe', name: 'app_newsletter_subscribe', methods: ['POST'])]
+    public function newsletterSubscribe(Request $request): Response
+    {
+        // Handle newsletter subscription
+        // This could store emails, send confirmation, etc.
+        return $this->redirectToRoute('app_axioms_default');
+    }
+
+    #[Route('/roadmap', name: 'app_web_roadmap', methods: ['GET'])]
+    public function roadmap(): Response
+    {
+        return $this->render('web/roadmap.html.twig');
+    }
 }
