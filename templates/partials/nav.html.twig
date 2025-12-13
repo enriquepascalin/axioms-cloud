@@ -35,29 +35,36 @@
 </ul>
 -->
 #}
-<nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="{{ path('app_axioms_default') }}" class="active">Home</a></li>
         <li><a href="{{ path('app_web_about') }}">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="{{ path('app_web_spec') }}">Specification</a></li>
+        <li><a href="{{ path('app_web_axioms') }}">Axioms</a></li>
         <li><a href="{{ path('app_web_team') }}">Team</a></li>
         <li><a href="{{ path('app_web_blog') }}">Blog</a></li>
-        <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+        <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="https://gssato.axioms.cloud">GSSATO Specification</a></li>
+            <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
+                <li><a href="{{ path('app_web_dw_axioms_guide') }}">AXIOMS Guide</a></li>
+                <li><a href="{{ path('app_web_dw_axioms_spec') }}">AXIOMS Specification</a></li>
+                <li><a href="{{ path('app_web_dw_gssato_spec') }}">GSSATO Specification</a></li>
+                <li><a href="{{ path('app_web_dw_axioms_ctk') }}">AXIOMS CTK</a></li>
+                <li><a href="{{ path('app_web_dw_axioms_sdk') }}">AXIOMS SDK</a></li>
               </ul>
             </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
+            <li><a href="{{ path('app_web_cell_tpl') }}">Cell Templates</a></li>
+            <li><a href="{{ path('app_web_sample_projects') }}">Sample Projects</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#"><span>Training</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="{{ path('app_web_free_courses') }}">Free Courses</a></li>
+            <li><a href="{{ path('app_web_training') }}">Professional Training</a></li>
+            <li><a href="{{ path('app_web_certification') }}">Certification</a></li>
+            <li><a href="{{ path('app_web_podcast') }}">Developer Podcast</a></li>
           </ul>
         </li>
         <li><a href="{{ path('app_web_contact') }}">Contact</a></li>

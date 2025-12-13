@@ -209,12 +209,6 @@ final class AxiomsDefaultController extends AbstractController
         return $this->render('web/team.html.twig');
     }
 
-    #[Route('/training', name: 'app_web_training', methods: ['GET'])]
-    public function training(): Response
-    {
-        return $this->render('web/training.html.twig');
-    }
-
     #[Route('/downloads', name: 'app_web_downloads', methods: ['GET'])]
     public function downloads(SpecificationRepository $specs, DownloadRepository $downloads): Response
     {
@@ -274,6 +268,94 @@ final class AxiomsDefaultController extends AbstractController
         return $this->render('web/search.html.twig', [
             'q'       => $q,
             'results' => $results,
+        ]);
+    }
+
+    #[Route('/axioms_guide', name: 'app_web_dw_axioms_guide', methods: ['GET'])]
+    public function axiomsGuide(ProjectRepository $projects): Response
+    {
+        return $this->render('web/axioms_guide.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/axioms_spec', name: 'app_web_dw_axioms_spec', methods: ['GET'])]
+    public function axiomsSpec(ProjectRepository $projects): Response
+    {
+        return $this->render('web/axioms_spec.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/gssato_spec', name: 'app_web_dw_gssato_spec', methods: ['GET'])]
+    public function gssatoSpec(ProjectRepository $projects): Response
+    {
+        return $this->render('web/gssato_spec.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/axioms_ctk', name: 'app_web_dw_axioms_ctk', methods: ['GET'])]
+    public function axiomsCtk(ProjectRepository $projects): Response
+    {
+        return $this->render('web/axioms_ctk.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/axioms_sdk', name: 'app_web_dw_axioms_sdk', methods: ['GET'])]
+    public function axiomsSdk(ProjectRepository $projects): Response
+    {
+        return $this->render('web/axioms_sdk.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/cell_tpl', name: 'app_web_cell_tpl', methods: ['GET'])]
+    public function cellTpl(ProjectRepository $projects): Response
+    {
+        return $this->render('web/cell_tpl.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/axioms_sample_projects', name: 'app_web_sample_projects', methods: ['GET'])]
+    public function axiomsSampleProjects(ProjectRepository $projects): Response
+    {
+        return $this->render('web/axioms_sample_projects.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/free_courses', name: 'app_web_free_courses', methods: ['GET'])]
+    public function freeCpurses(ProjectRepository $projects): Response
+    {
+        return $this->render('web/free_courses.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/training', name: 'app_web_training', methods: ['GET'])]
+    public function training(ProjectRepository $projects): Response
+    {
+        return $this->render('web/training.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/certification', name: 'app_web_certification', methods: ['GET'])]
+    public function certification(ProjectRepository $projects): Response
+    {
+        return $this->render('web/certification.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
+        ]);
+    }
+
+    #[Route('/podcast', name: 'app_web_podcast', methods: ['GET'])]
+    public function podcast(ProjectRepository $projects): Response
+    {
+        return $this->render('web/podcast.html.twig', [
+            'projects' => $projects->findBy([], ['name' => 'ASC']),
         ]);
     }
 }
