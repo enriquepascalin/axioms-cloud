@@ -114,6 +114,54 @@ final class AxiomsDefaultController extends AbstractController
         ]);
     }
 
+    #[Route('/axioms', name: 'app_web_axioms', methods: ['GET'])]
+    public function axioms(
+        SpecificationRepository $specs,
+        DownloadRepository $downloads,
+        ResourceRepository $resources
+    ): Response {
+        // Single public spec for the site
+        $spec = $specs->findOneBy([]); // adjust if you choose to address by slug later
+        $defaultVersion = $spec?->getDefaultVersion();
+
+        $versionDownloads = $defaultVersion
+            ? $downloads->findBy(['specVersion' => $defaultVersion], ['label' => 'ASC'])
+            : [];
+
+        $relatedResources = $defaultVersion
+            ? $resources->findBy(['specVersion' => $defaultVersion], ['created_at' => 'DESC'], 12)
+            : [];
+
+        return $this->render('web/axioms.html.twig', [
+            'spec'              => $spec,
+            'default_version'   => $defaultVersion,
+            'version_downloads' => $versionDownloads,
+            'related_resources' => $relatedResources,
+        ]);
+    }
+
+    #[Route('/axioms/detail', name: 'app_web_axioms_detail', methods: ['GET'])]
+    public function axiomDetails(Request $request, SpecVersionRepository $versions, SpecificationRepository $specs): Response
+    {
+        $spec = $specs->findOneBy([]);
+        $page  = max(1, (int) $request->query->get('page', 1));
+        $limit = min(50, max(1, (int) $request->query->get('limit', 20)));
+        $offset = ($page - 1) * $limit;
+
+        $items = $versions->findBy(['specification' => $spec], ['releaseDate' => 'DESC', 'version' => 'DESC'], $limit, $offset);
+
+        // If you want a total count without adding a custom repo, do a cheap count via findBy then count():
+        $total = count($versions->findBy(['specification' => $spec]));
+
+        return $this->render('web/axiom_details.html.twig', [
+            'spec'     => $spec,
+            'versions' => $items,
+            'page'     => $page,
+            'limit'    => $limit,
+            'total'    => $total,
+        ]);
+    }
+
     #[Route('/blog', name: 'app_web_blog', methods: ['GET'])]
     public function blog(
         SpecificationRepository $specs,
