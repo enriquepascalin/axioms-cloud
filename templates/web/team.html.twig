@@ -81,7 +81,7 @@
         <div class="col-lg-12">
         <div class="section-title text-center mb-5">
             <h2>What is AXIOMS?</h2>
-            <p>The Evidence & Contract Driven Architecture</p>
+            <p>The Evidence &amp; Contract Driven Architecture</p>
         </div>
         </div>
     </div>
@@ -150,90 +150,199 @@
 
 </section><!-- /What is AXIOMS Section -->
 
+<!-- AXIOMS in One Page -->
+<section id="axioms-overview" class="about section">
+  <div class="container">
+
+    <!-- Section Title -->
+    <div class="section-title" data-aos="fade-up">
+      <h2>AXIOMS in a nutshell</h2>
+      <p>
+        A contract- and evidence-driven meta-architecture for modern systems: Cells, planes, contracts, fitness
+        functions and conformance tooling, all described by a normative specification.
+      </p>
+    </div><!-- End Section Title -->
+
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="col-lg-4">
+        <div class="icon-box h-100">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-diagram-3 display-6 me-3"></i>
+            <h3 class="h5 mb-0">Conceptual Model</h3>
+          </div>
+          <p>
+            AXIOMS defines a clear set of primitives:
+          </p>
+          <ul>
+            <li><strong>Cells</strong> as the fundamental architectural and deployment unit.</li>
+            <li><strong>Planes</strong> (Data, Control, Knowledge) to reason about runtime concerns.</li>
+            <li><strong>Contracts</strong> (RPC, events, policy, observability) as the only way Cells interact.</li>
+            <li><strong>Fitness Functions</strong> to turn architectural intent into executable checks.</li>
+          </ul>
+          <p class="mb-0">
+            These primitives host and organize existing styles: microservices, modular monoliths, Hexagonal, Clean,
+            DDD and others become coordinates inside the model, not competing religions.
+          </p>
+        </div>
+      </div><!-- End Column -->
+
+      <div class="col-lg-4">
+        <div class="icon-box h-100">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-journal-code display-6 me-3"></i>
+            <h3 class="h5 mb-0">Normative Specification</h3>
+          </div>
+          <p>
+            AXIOMS is a written standard, not just a pattern catalog. The specification provides:
+          </p>
+          <ul>
+            <li><strong>Axioms A1–A31</strong> written as MUST/SHOULD rules for Cells.</li>
+            <li><strong>Guidance</strong> on contracts, evolution rules and Cell anatomy.</li>
+            <li><strong>Language Profiles</strong> to map code quality and tooling expectations per stack.</li>
+            <li><strong>Conformance levels</strong> (Base / Hardened) for incremental adoption.</li>
+          </ul>
+          <p class="mb-0">
+            The long-term goal is formal recognition as an industry-grade standard suitable for ISO/ANSI-style
+            certification.
+          </p>
+        </div>
+      </div><!-- End Column -->
+
+      <div class="col-lg-4">
+        <div class="icon-box h-100">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-activity display-6 me-3"></i>
+            <h3 class="h5 mb-0">Evidence & Conformance</h3>
+          </div>
+          <p>
+            Architecture is considered incomplete without evidence. AXIOMS builds verification in:
+          </p>
+          <ul>
+            <li><strong>Fitness functions</strong> express architectural invariants as tests.</li>
+            <li><strong>Conformance Test Kit (CTK)</strong> scans code, contracts and telemetry.</li>
+            <li><strong>CI/CD reference pipeline</strong> runs AXIOMS checks continuously.</li>
+            <li><strong>Knowledge artifacts</strong> document what each Cell claims to be and prove.</li>
+          </ul>
+          <p class="mb-0">
+            Instead of “diagrams + faith”, teams get reproducible, machine-checked reports about their architecture.
+          </p>
+        </div>
+      </div><!-- End Column -->
+
+    </div>
+  </div>
+</section><!-- /AXIOMS in One Page -->
+
 <!-- The Cell Section -->
 <section id="cell" class="cell section">
-
     <div class="container" data-aos="fade-up">
-
-    <div class="row">
-        <div class="col-lg-12">
-        <div class="section-title text-center mb-5">
-            <h2>The Cell: Your Architectural Stem Cell</h2>
-            <p>A polymorphic unit that adapts to any topological need</p>
-        </div>
-        </div>
+        <!-- The Cell Section Row 1 -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center mb-5">
+                    <h2>The Cell: Your Architectural Stem Cell</h2>
+                    <p>A polymorphic unit that adapts to any topological need</p>
+                </div>
+            </div>
+        </div><!-- /The Cell Section Row 1 -->
+        <!-- The Cell Section  Row 2 -->
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+            <!-- The Cell Section  Row 2 Col 1 -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="cell-visualization">
+                    <h4>Canonical Cell Structure</h4>
+                    <pre class="bg-dark text-light p-3 rounded">
+                        <code>CellName/
+                        ├── Knowledge/         # D1 - Contracts, specs, evidence
+                        ├── DNA/               # D3/D4 - Semantic core, entities, invariants
+                        ├── Behavior/          # D3/D4 - Use cases, workflows, orchestration
+                        ├── Integration/       # D3/D4 - Semantic edges and IO
+                        ├── Infrastructure/    # D3/D4 - Platform/runtime glue
+                        └── Tests/             # D5 - Evidence generators
+                        </code>
+                    </pre>
+                    <p class="mt-3">Every Cell is self-contained, independently deployable, and governed by formal contracts.</p>
+                </div>
+                <div>
+                    <h3>The unit that replaces “service”, “module” and “microservice” debates.</h3>
+                    <ul>
+                        <li>
+                            <i class="bi bi-check2-all"></i>
+                            <span><strong>Polymorphic Internals.</strong> Inside a Cell you can choose Hexagonal, Clean, layered,
+                            event-sourced, DDD-heavy or minimalistic approaches. AXIOMS does not dictate the style – it constrains the
+                            <em>edges</em>.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check2-all"></i>
+                            <span><strong>Strictly Bounded Surfaces.</strong> All interaction goes through explicit, versioned
+                            contracts (RPC, events, policy, observability). No hidden database sharing, no “just call this class in
+                            another module”.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check2-all"></i>
+                            <span><strong>Evidence Included.</strong> Each Cell ships with tests, fitness functions, specs, manuals and
+                            telemetry definitions so that its behavior can be verified in isolation and in the wider system.</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-check2-all"></i>
+                            <span><strong>Topology-agnostic.</strong> Collections of Cells can form modular monoliths, classic
+                            microservice meshes, serverless graphs or hybrids. The unit does not change; only the topology does.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /The Cell Section  Row 2 Col 1 -->
+            <!-- The Cell Section  Row 2 Col 2 -->
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="cell-properties">
+                    <h4>Polymorphic STA Adaptation</h4>
+                    <p>
+                        Think of an AXIOMS Cell like a <strong>biological stem cell</strong>. Your Cell adapts and transforms 
+                        into any "tissue" you need within your software organism:
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="sta-type p-3">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-box-seam" style="font-size: 2rem;"></i>
+                                </div>
+                                <h5>Modular Monolith</h5>
+                                <p class="small">Cell acts as a module within a single deployable unit</p>
+                            </div>
+                        </div>
+                    <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="sta-type p-3">
+                            <div class="icon mb-3">
+                                <i class="bi bi-boxes" style="font-size: 2rem;"></i>
+                            </div>
+                            <h5>Microservice</h5>
+                            <p class="small">Cell deploys independently as a microservice</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="sta-type p-3">
+                            <div class="icon mb-3">
+                                <i class="bi bi-lightning" style="font-size: 2rem;"></i>
+                            </div>
+                            <h5>Serverless</h5>
+                            <p class="small">Cell runs as serverless function with same structure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">The Core Innovation</h5>
+                        <p class="card-text">
+                        Unlike traditional microservices or modules, every AXIOMS Cell carries its own 
+                        <strong>Knowledge Dimension</strong> — a machine-readable repository of intent, evidence, and truth 
+                        that actively governs how all realms inside the Cell operate.
+                        </p>
+                        <a href="{{ path('app_web_dw_axioms_spec') }}" class="btn btn-outline-primary">Read Cell Specification</a>
+                    </div>
+                </div>
+            </div><!-- /The Cell Section  Row 2 Col 2 -->
+        </div><!-- /The Cell Section Row 2 -->
     </div>
-
-    <div class="row gy-4">
-        <div class="col-lg-5" data-aos="fade-right">
-        <div class="cell-visualization">
-            <h4>Canonical Cell Structure</h4>
-            <pre class="bg-dark text-light p-3 rounded"><code>CellName/
-├── Knowledge/          # D1 – Contracts, specs, evidence
-├── DNA/               # D3/D4 – Semantic core, entities, invariants
-├── Behavior/          # D3/D4 – Use cases, workflows, orchestration
-├── Integration/       # D3/D4 – Semantic edges and IO
-├── Infrastructure/    # D3/D4 – Platform/runtime glue
-└── Tests/             # D5 – Evidence generators</code></pre>
-            <p class="mt-3">Every Cell is self-contained, independently deployable, and governed by formal contracts.</p>
-        </div>
-        </div>
-        
-        <div class="col-lg-7" data-aos="fade-left">
-        <div class="cell-properties">
-            <h4>Polymorphic STA Adaptation</h4>
-            <p>
-                Think of an AXIOMS Cell like a <strong>biological stem cell</strong>. Your Cell adapts and transforms 
-                into any "tissue" you need within your software organism:
-            </p>
-            
-            <div class="row mt-4">
-            <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="100">
-                <div class="sta-type p-3">
-                <div class="icon mb-3">
-                    <i class="bi bi-box-seam" style="font-size: 2rem;"></i>
-                </div>
-                <h5>Modular Monolith</h5>
-                <p class="small">Cell acts as a module within a single deployable unit</p>
-                </div>
-            </div>
-            <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="200">
-                <div class="sta-type p-3">
-                <div class="icon mb-3">
-                    <i class="bi bi-boxes" style="font-size: 2rem;"></i>
-                </div>
-                <h5>Microservice</h5>
-                <p class="small">Cell deploys independently as a microservice</p>
-                </div>
-            </div>
-            <div class="col-md-4 text-center" data-aos="zoom-in" data-aos-delay="300">
-                <div class="sta-type p-3">
-                <div class="icon mb-3">
-                    <i class="bi bi-lightning" style="font-size: 2rem;"></i>
-                </div>
-                <h5>Serverless</h5>
-                <p class="small">Cell runs as serverless function with same structure</p>
-                </div>
-            </div>
-            </div>
-            
-            <div class="card mt-4">
-            <div class="card-body">
-                <h5 class="card-title">The Core Innovation</h5>
-                <p class="card-text">
-                Unlike traditional microservices or modules, every AXIOMS Cell carries its own 
-                <strong>Knowledge Dimension</strong> — a machine-readable repository of intent, evidence, and truth 
-                that actively governs how all realms inside the Cell operate.
-                </p>
-                <a href="{{ path('app_web_dw_axioms_spec') }}" class="btn btn-outline-primary">Read Cell Specification</a>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    </div>
-
 </section><!-- /The Cell Section -->
 
 <!-- Stats Section -->
@@ -434,6 +543,45 @@
     </div>
 
 </section><!-- /Why AXIOMS Section -->
+
+<!-- Join Section -->
+<section id="join" class="about section">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>How to Get Involved</h2>
+      <p>
+        AXIOMS is an open technical specification. You can read, critique, implement and extend it – or simply use it as
+        a lens to design your next system more deliberately.
+      </p>
+    </div>
+
+    <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4">
+        <h3>Read the Specification</h3>
+        <p>
+          Start with the AXIOMS Architecture Specification draft and the GSSATO 2025 guide. They describe the concepts,
+          axioms and reference structures in detail.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h3>Apply It to a System</h3>
+        <p>
+          Model your existing system as Cells, identify contracts, define fitness functions and connect them to your
+          CI/CD. AXIOMS is most useful when it meets real-world constraints.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h3>Contribute Feedback</h3>
+        <p>
+          Share issues, critiques and proposals through the AXIOMS repositories and community channels. The standard
+          evolves as we gather more evidence from real implementations.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section><!-- /Join Section -->
 
 <!-- Call to Action -->
 <section id="cta" class="cta section">
